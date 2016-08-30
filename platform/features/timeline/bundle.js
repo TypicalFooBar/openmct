@@ -37,6 +37,7 @@ define([
     "./src/capabilities/CostCapability",
     "./src/directives/MCTSwimlaneDrop",
     "./src/directives/MCTSwimlaneDrag",
+    "./src/directives/MCTZoom",
     "./src/services/ObjectLoader",
     "text!./res/templates/values.html",
     "text!./res/templates/timeline.html",
@@ -66,6 +67,7 @@ define([
     CostCapability,
     MCTSwimlaneDrop,
     MCTSwimlaneDrag,
+    MCTZoom,
     ObjectLoader,
     valuesTemplate,
     timelineTemplate,
@@ -546,6 +548,10 @@ define([
                     "depends": [
                         "dndService"
                     ]
+                },
+                {
+                    "key": "mctZoom",
+                    "implementation": MCTZoom
                 }
             ],
             "services": [
