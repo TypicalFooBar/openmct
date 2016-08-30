@@ -27,11 +27,14 @@ define(
             function link(scope, element, attrs) {
                 // Bind to the mouse wheel scroll event
                 element.bind("DOMMouseScroll mousewheel onmousewheel", function(event) {
-                    // Determine the direction the mouse wheel was turned
-                    var zoomDirection = event.wheelDelta > 0 ? -1 : 1;
+                    // If the shift key is clicked
+                    if (event.shiftKey) {
+                        // Determine the direction the mouse wheel was turned
+                        var zoomDirection = event.wheelDelta > 0 ? -1 : 1;
 
-                    // Call the zoom callback in order to perform the zoom in the controller
-                    scope.zoomCallback({arg1: zoomDirection});
+                        // Call the zoom callback in order to perform the zoom in the controller
+                        scope.zoomCallback({arg1: zoomDirection});
+                    }
                 });
             }
 
